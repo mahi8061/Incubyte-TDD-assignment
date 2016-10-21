@@ -1,14 +1,11 @@
 class StringCalculator
+
+
   def add string_numbers
-      0 if string_numbers == ""
-      string_to_integer string_numbers
+    numbers = string_numbers.split(",")
+    numbers[0] == nil ? 0 : numbers.map! {|number| number.to_i}.reduce(:+)
   end
 
-private
-
-  def string_to_integer string
-    string.to_i
-  end
 
 
 
