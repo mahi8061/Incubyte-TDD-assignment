@@ -10,7 +10,9 @@ describe StringCalculator do
       expect(string_calculator.add("1")).to eq(1)
     end
 
-    
+    it "takes 2 numbers" do
+      expect(string_calculator.add("1,2")).to eq(3)
+    end
 
   end
 
