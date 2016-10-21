@@ -21,6 +21,11 @@ describe StringCalculator do
     it "handles new lines e.g 1\n2,3" do
       expect(string_calculator.add("1\n2,3")).to eq(6)
     end
+
+    it "throws an exception \"negatives not allowed\" when a negative number is passed" do
+      expect(string_calculator.add("-1")).to eq("negatives not allowed")
+    end
+
   end
 
 end
