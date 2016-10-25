@@ -4,7 +4,7 @@ class StringCalculator
 
   def add string_numbers
     numbers = split_the_string string_numbers
-    
+
     raise NEGATIVES if negatives? numbers
     digits = convert_to_integers numbers
     remove_numbers_above_1000 digits
@@ -29,9 +29,9 @@ private
     digits.collect!{|digit| digit >= 1000 ? digit = 0 : digit = digit }
   end
 
-  def delimiters
-
-  end
+  # def delimiters
+  #
+  # end
 
 
 end
