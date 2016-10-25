@@ -1,7 +1,7 @@
 class StringCalculator
 
   NEGATIVES = "negatives not allowed"
-
+  ZERO = 0
   def add string_numbers
     numbers = split_the_string string_numbers
     if delimiters? numbers
@@ -11,7 +11,7 @@ class StringCalculator
     raise NEGATIVES if negatives? numbers
     digits = convert_to_integers numbers
     remove_numbers_above_1000 digits
-    numbers[0] == nil ? 0 : digits.reduce(:+)
+    zero?(numbers) ? ZERO : digits.reduce(:+)
   end
 
 private
@@ -42,6 +42,10 @@ private
 
   def remove_delimiter numbers, delimiter
     numbers.last.delete(delimiter).split("")
+  end
+
+  def zero? numbers
+    numbers.first == nil
   end
 
 
