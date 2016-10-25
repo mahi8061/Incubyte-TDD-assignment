@@ -18,7 +18,7 @@ describe StringCalculator do
       expect(string_calculator.add("1,2,3,4,5")).to eq(15)
     end
 
-    it "handles new lines e.g 1\n2,3" do
+    it "handles new lines e.g 1\\n2,3" do
       expect(string_calculator.add("1\n2,3")).to eq(6)
     end
 
