@@ -39,5 +39,10 @@ describe StringCalculator do
     it "can have multiple delimiters in the following format “//[delim1][delim2]\\n”" do
       expect(string_calculator.add("//[*][%]\n1*2%3")).to eq(6)
     end
+
+    it "can have multiple delimiters with length longer than one char" do
+      expect(string_calculator.add("//[***][%%%]\n1***2%%%3")).to eq(6)
+    end
+
   end
 end
