@@ -27,4 +27,7 @@ private
   def remove_numbers_above_1000 digits
     digits.collect!{|digit| digit >= 1000 ? digit = 0 : digit = digit }
   end
+
+  def delimiters
+  end
 end
