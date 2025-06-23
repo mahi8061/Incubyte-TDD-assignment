@@ -31,6 +31,9 @@ describe StringCalculator do
     it "ignores numbers bigger than 1000 e.g. 2 + 1000 = 2" do
       expect(string_calculator.add("1000,2")).to eq(2)
     end
-   end
 
+    it "can accept delimiters of any length in the following format “//[delimiter]\\n”" do
+      expect(string_calculator.add("//[***]\n1***2***3")).to eq(6)
+    end
+  end
 end
