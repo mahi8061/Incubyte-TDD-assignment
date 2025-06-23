@@ -1,13 +1,18 @@
 class StringCalculator
   NEGATIVES = 'negatives not allowed'.freeze
   ZERO = 0
+  THOUSAND = 1000
+
   def add(string_numbers)
     numbers = split_the_string string_numbers
+
     if delimiters? numbers
       delimiter = delimiter(numbers)
       numbers = remove_delimiter numbers, delimiter
     end
+
     raise NEGATIVES if negatives? numbers
+
     digits = convert_to_integers numbers
     remove_numbers_above_1000 digits
     zero?(numbers) ? ZERO : digits.reduce(:+)
@@ -28,7 +33,7 @@ private
   end
 
   def remove_numbers_above_1000(digits)
-    digits.collect! { |digit| digit >= 1000 ? digit = 0 : digit = digit }
+    digits.collect! { |digit| digit >= THOUSAND ? digit = ZERO : digit = digit }
   end
 
   def delimiters?(numbers)
